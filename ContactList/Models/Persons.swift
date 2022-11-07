@@ -13,14 +13,18 @@ struct Person {
     let email: String
     let phone: String
     
+    var fullName: String {
+        "\(firstName) \(lastName)"
+    }
+    
     static func getPerson() -> [Person] {
         var persons : [Person] = []
-        
+
         let firstNames = DataStore().firstNames.shuffled()
         let lastNames = DataStore().lastNames.shuffled()
         let emails = DataStore().emails.shuffled()
         let phones = DataStore().phones.shuffled()
-        
+
         for i in 0..<firstNames.count {
             let person = Person(
                 firstName: firstNames[i],
@@ -30,7 +34,7 @@ struct Person {
             )
             persons.append(person)
         }
-        
+
         return persons
     }
 }
