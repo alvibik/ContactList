@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactTableViewController: UITableViewController {
+final class ContactTableViewController: UITableViewController {
     
     var persons = Person.getPerson()
     
@@ -38,5 +38,4 @@ class ContactTableViewController: UITableViewController {
             ContactDetailVC.person = persons[indexPath.row]
         }
     }
-    
 }

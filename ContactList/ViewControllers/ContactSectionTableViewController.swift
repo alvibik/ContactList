@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ContactSectionTableViewController: UITableViewController {
+final class ContactSectionTableViewController: UITableViewController {
 
     var persons = Person.getPerson()
     
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -22,8 +21,6 @@ class ContactSectionTableViewController: UITableViewController {
         return 2
     }
 
-    
-    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let person = persons[section]
         return "\(person.fullName)"
@@ -35,5 +32,4 @@ class ContactSectionTableViewController: UITableViewController {
         cell.textLabel?.text = indexPath.row == 0 ? person.email : person.phone
         return cell
     }
-
 }

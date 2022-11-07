@@ -34,7 +34,6 @@ struct Person {
             )
             persons.append(person)
         }
-
         return persons
     }
 }
