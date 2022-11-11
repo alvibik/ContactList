@@ -29,7 +29,10 @@ final class ContactSectionTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contacts", for: indexPath)
         let person = persons[indexPath.section]
-        cell.textLabel?.text = indexPath.row == 0 ? person.email : person.phone
+        var content = cell.defaultContentConfiguration()
+        content.text = indexPath.row == 0 ? person.email : person.phone
+        cell.contentConfiguration = content
+//        cell.textLabel?.text = indexPath.row == 0 ? person.email : person.phone
         return cell
     }
 }
